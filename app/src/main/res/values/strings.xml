@@ -1,3 +1,8 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">E06: Persistencia</string>
 </resources>
+=======
+    <string name="app_name">persistencia</string>
+</resources>
+>>>>>>> origin/main
