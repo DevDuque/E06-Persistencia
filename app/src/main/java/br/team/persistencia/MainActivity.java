@@ -9,8 +9,10 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView savedImg;
     private Bitmap capturedImage;
+    private TextView nextPage;
+
+    Button getImgButton, saveImgButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         savedImg = findViewById(R.id.saved_img);
-        Button getImgButton = findViewById(R.id.get_img);
-        Button saveImgButton = findViewById(R.id.save_img);
+        getImgButton = findViewById(R.id.get_img);
+        saveImgButton = findViewById(R.id.save_img);
 
         // Verifica a permissão da câmera
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -83,6 +88,18 @@ public class MainActivity extends AppCompatActivity {
         editor.putString("lastAccess", currentAccess);
         editor.apply();
 
+// -----------------------------------------------------------------------------------------------------------------------------------------
+
+        nextPage = findViewById(R.id.next_page);
+
+        nextPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

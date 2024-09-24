@@ -67,4 +67,23 @@
 
     </LinearLayout>
 
+    <TextView android:id="@+id/next_page"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="24dp"
+
+        android:gravity="bottom"
+        android:clickable="true"
+        android:focusable="true"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="#0FA3B1"
+        android:text="Ir para tela de produto" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
